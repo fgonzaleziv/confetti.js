@@ -12,7 +12,8 @@ var confetti = {
 	togglePause: null,	//call to toggle whether the confetti animation is paused
 	remove: null,		//call to stop the confetti animation and remove all confetti immediately
 	isPaused: null,		//call and returns true or false depending on whether the confetti animation is paused
-	isRunning: null		//call and returns true or false depending on whether the animation is running
+	isRunning: null,	//call and returns true or false depending on whether the animation is running
+	zIndex: 999999		//set the z-index for the confetti
 };
 
 (function() {
@@ -103,7 +104,7 @@ var confetti = {
 		if (canvas === null) {
 			canvas = document.createElement("canvas");
 			canvas.setAttribute("id", "confetti-canvas");
-			canvas.setAttribute("style", "display:block;z-index:999999;pointer-events:none;position:fixed;top:0");
+			canvas.setAttribute("style", "display:block;z-index:" + confetti.zIndex + ";pointer-events:none;position:fixed;top:0");
 			document.body.prepend(canvas);
 			canvas.width = width;
 			canvas.height = height;
