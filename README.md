@@ -32,6 +32,7 @@ You can also configure these parameters:
 	confetti.frameInterval = 20; //the confetti animation frame interval in milliseconds
 	confetti.alpha = 1.0;        //the alpha opacity of the confetti (between 0 and 1, where 1 is opaque and 0 is invisible)
 	confetti.gradient = false;   //whether to use gradients for the confetti particles
+	confetti.zIndex: 999999;     //set the z-index for the confetti
 
 For a live demo, [click here](https://feelingunlucky.today) and search something, anything :)
 
