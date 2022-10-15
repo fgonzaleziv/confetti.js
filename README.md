@@ -33,11 +33,9 @@ You can also configure these parameters:
 	confetti.alpha = 1.0;        //the alpha opacity of the confetti (between 0 and 1, where 1 is opaque and 0 is invisible)
 	confetti.gradient = false;   //whether to use gradients for the confetti particles
 	confetti.zIndex: 999999;     //set the z-index for the confetti
+	confetti.customColors: null   //an array of rgba colors (this overrides the alpha settings)
 
-For a live demo, [click here](https://feelingunlucky.today) and search something, anything :)
-
-The demo uses this function:
-
-	confetti.start(1200, 50, 150); //throws a random number of confetti particles (between 50 and 150) for 1200 milliseconds (1.2 seconds)
-
+Example:
+	confetti.customColors = ["rgba(245, 40, 145, 0.8)","rgba(161, 109, 136, 0.8)","rgba(152, 223, 47, 0.8)"];
+    confetti.start();
 Enjoy!
