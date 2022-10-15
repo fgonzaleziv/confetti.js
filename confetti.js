@@ -13,7 +13,8 @@ var confetti = {
 	togglePause: null,	//call to toggle whether the confetti animation is paused
 	remove: null,		//call to stop the confetti animation and remove all confetti immediately
 	isPaused: null,		//call and returns true or false depending on whether the confetti animation is paused
-	isRunning: null	//call and returns true or false depending on whether the animation is running
+	isRunning: null,	//call and returns true or false depending on whether the animation is running
+	customColors: null   //an array of rgba colors (with transparency!)
 };
 
 (function() {
@@ -37,16 +38,29 @@ var confetti = {
 	var context = null;
 
 	function resetParticle(particle, width, height) {
-		particle.color = colors[(Math.random() * colors.length) | 0] + (confetti.alpha + ")");
-		particle.color2 = colors[(Math.random() * colors.length) | 0] + (confetti.alpha + ")");
-		particle.x = Math.random() * width;
-		particle.y = Math.random() * height - height;
-		particle.diameter = Math.random() * 10 + 5;
-		particle.tilt = Math.random() * 10 - 10;
-		particle.tiltAngleIncrement = Math.random() * 0.07 + 0.05;
-		particle.tiltAngle = Math.random() * Math.PI;
-		return particle;
-	}
+    if (!confetti.customColors) {
+      particle.color =
+        confetti.customColors[
+          (Math.random() * confetti.customColors.length) | 0
+        ];
+      particle.color2 =
+        confetti.customColors[
+          (Math.random() * confetti.customColors.length) | 0
+        ];
+    } else {
+      particle.color =
+        colors[(Math.random() * colors.length) | 0] + (confetti.alpha + ")");
+      particle.color2 =
+        colors[(Math.random() * colors.length) | 0] + (confetti.alpha + ")");
+    }
+    particle.x = Math.random() * width;
+    particle.y = Math.random() * height - height;
+    particle.diameter = Math.random() * 10 + 5;
+    particle.tilt = Math.random() * 10 - 10;
+    particle.tiltAngleIncrement = Math.random() * 0.07 + 0.05;
+    particle.tiltAngle = Math.random() * Math.PI;
+    return particle;
+  }
 
 	function toggleConfettiPause() {
 		if (pause)
