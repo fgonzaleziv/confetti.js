@@ -36,6 +36,8 @@ You can also configure these parameters:
 	confetti.customColors: null   //an array of rgba colors (this overrides the alpha settings)
 
 Example:
+
 	confetti.customColors = ["rgba(245, 40, 145, 0.8)","rgba(161, 109, 136, 0.8)","rgba(152, 223, 47, 0.8)"];
     confetti.start();
+	
 Enjoy!

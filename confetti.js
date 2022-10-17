@@ -38,7 +38,7 @@ var confetti = {
 	var context = null;
 
 	function resetParticle(particle, width, height) {
-    if (!confetti.customColors) {
+    if (confetti.customColors) {
       particle.color =
         confetti.customColors[
           (Math.random() * confetti.customColors.length) | 0
